@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Miles converter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+	body{
+		background: #f2f2f2;
+		margin-top: 50px;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<h1 class="display-3 text-center mb-2">Mile converter</h1>
+				<form>
+					<input class="form-control form-control-lg" type="number" name="" placeholder="Enter number of miles" id="mileInput">
+				</form>
+				<br>
+				<div id="output">
+					<div class="card">
+						<div class="card-block bg-warning mb-2">
+							<h4>Kilometers:</h4>
+							<div id="kmOutput">
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="card">
+						<div class="card-block bg-primary mb-2">
+							<h4>Meters:</h4>
+							<div id="meterOutput">
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="card">
+						<div class="card-block bg-success mb-2">
+							<h4>Yards:</h4>
+							<div id="yardsOutput">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		document.getElementById("output").style.visibility = "hidden";
+		document.getElementById("mileInput").addEventListener("input", function(e){
+			document.getElementById("output").style.visibility = "visible";
+			let mile = e.target.value;
+			document.getElementById("kmOutput").innerHTML = mile*1.6093;
+			document.getElementById("meterOutput").innerHTML = mile*1.6093*1000;
+			document.getElementById("yardsOutput").innerHTML = mile*1760;
+
+		})
+	</script>
+</body>
+</html>
